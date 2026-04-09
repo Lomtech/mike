@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos — Mike</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- TOP NAV -->
+        <div class="topbar">
+            <a href="index.html" class="back-btn">
+                <span class="back-arrow">←</span>
+                Zurück
+            </a>
+            <span class="topbar-name">Mike</span>
+        </div>
+
+        <div class="card">
+
+            <!-- HEADER -->
+            <div class="gallery-header">
+                <span class="section-label" style="padding: 0; margin-bottom: 6px;">Galerie</span>
+                <h2 class="gallery-title">Meine Fotos</h2>
+                <p class="gallery-sub">Ausgewählt · 2022 — 2026</p>
+            </div>
+
+            <!-- FILTERS -->
+            <div class="filter-row">
+                <div class="filter-tab active" onclick="filterGrid('alle', this)">Alle</div>
+                <div class="filter-tab" onclick="filterGrid('sport', this)">Sport</div>
+                <div class="filter-tab" onclick="filterGrid('reise', this)">Reise</div>
+                <div class="filter-tab" onclick="filterGrid('alltag', this)">Alltag</div>
+                <div class="filter-tab" onclick="filterGrid('portrait', this)">Porträt</div>
+            </div>
+
+            <!-- FEATURED -->
+            <div class="featured" onclick="openLightbox(this)">
+                <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Im Moment sein" data-tag="Sport" alt="">
+                <div class="featured-overlay">
+                    <span class="featured-badge">⭐ Featured</span>
+                    <p class="featured-title">Im Moment sein.</p>
+                </div>
+            </div>
+
+            <!-- SECTION DIVIDER -->
+            <div class="section-divider">
+                <span class="div-label">Galerie</span>
+                <div class="div-line"></div>
+                <span class="div-count" id="count">12 Bilder</span>
+            </div>
+
+            <!-- GRID -->
+            <!-- Bilder: assets/fotos/foto1.jpg bis foto12.jpg -->
+            <!-- data-cat: sport | reise | alltag | portrait -->
+            <div class="gallery-grid" id="grid">
+
+                <div class="grid-item" data-cat="sport" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Training" data-tag="Sport" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Training</p>
+                        <p class="grid-item-tag">Sport</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="portrait" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Self" data-tag="Porträt" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Self</p>
+                        <p class="grid-item-tag">Porträt</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="reise" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Irgendwo draußen" data-tag="Reise" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Irgendwo draußen</p>
+                        <p class="grid-item-tag">Reise</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="alltag" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Arbeit" data-tag="Alltag" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Arbeit</p>
+                        <p class="grid-item-tag">Alltag</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="sport" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Wettkampf" data-tag="Sport" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Wettkampf</p>
+                        <p class="grid-item-tag">Sport</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="reise" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Fernweh" data-tag="Reise" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Fernweh</p>
+                        <p class="grid-item-tag">Reise</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="alltag" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Kaffee & Gedanken" data-tag="Alltag" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Kaffee & Gedanken</p>
+                        <p class="grid-item-tag">Alltag</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="portrait" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Fokus" data-tag="Porträt" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Fokus</p>
+                        <p class="grid-item-tag">Porträt</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="sport" onclick="openLightbox(this)">
+                    <img src="assets/fotos/foto9.jpg" data-title="No-Gi" data-tag="Sport" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">No-Gi</p>
+                        <p class="grid-item-tag">Sport</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="reise" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Berge" data-tag="Reise" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Berge</p>
+                        <p class="grid-item-tag">Reise</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="alltag" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Stille" data-tag="Alltag" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Stille</p>
+                        <p class="grid-item-tag">Alltag</p>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-cat="portrait" onclick="openLightbox(this)">
+                    <img src="https://i.ibb.co/0R0F95xS/mike.png" data-title="Licht" data-tag="Porträt" alt="">
+                    <div class="grid-item-overlay">
+                        <p class="grid-item-title">Licht</p>
+                        <p class="grid-item-tag">Porträt</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bottom-bar">
+                <a href="index.html" class="bottom-back">← Zurück zur Startseite</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-inner">
+            <img id="lb-img" src="" alt="">
+            <div class="lightbox-caption">
+                <h3 id="lb-title"></h3>
+                <span id="lb-tag"></span>
+            </div>
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        </div>
+    </div>
+
+    <script>
+        function filterGrid(cat, el) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            let count = 0;
+            document.querySelectorAll('.grid-item').forEach(item => {
+                const show = cat === 'alle' || item.dataset.cat === cat;
+                item.style.display = show ? 'block' : 'none';
+                if (show) count++;
+            });
+            document.getElementById('count').textContent = count + ' Bilder';
+        }
+
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            document.getElementById('lb-img').src = img.src;
+            document.getElementById('lb-title').textContent = img.dataset.title || '';
+            document.getElementById('lb-tag').textContent = img.dataset.tag || '';
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(e) {
+            if (e && e.target !== document.getElementById('lightbox') &&
+                !e.target.classList.contains('lightbox-close')) return;
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+</body>
+
+</html>
